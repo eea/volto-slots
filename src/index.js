@@ -1,12 +1,12 @@
-import { defineMessages } from 'react-intl';
 import ContextNavigationEdit from '@eeacms/volto-slots/components/manage/Blocks/ContextNavigation/ContextNavigationEdit';
 import ContextNavigationView from '@eeacms/volto-slots/components/manage/Blocks/ContextNavigation/ContextNavigationView';
 import BlockSettingsSchema from '@plone/volto/components/manage/Blocks/Block/Schema';
 import tableSVG from '@plone/volto/icons/table.svg';
 import { defaultToolbar } from './toolbar';
 import defaultSlots from './slots';
-import { slotsReducers } from './reducers';
-import { EditSlot } from '@eeacms/volto-slots/components/manage/Slots/EditSlot';
+import * as slotsReducers from './reducers';
+import EditSlot from '@eeacms/volto-slots/components/manage/Slots/EditSlot';
+
 import './quanta.less';
 import './slots.less';
 
@@ -51,14 +51,18 @@ const applyConfig = (config) => {
 
   config.addonReducers = {
     ...config.addonReducers,
-    slotsReducers,
+    ...slotsReducers,
   };
 
   config.settings.nonContentRoutes.push('/edit-slot', /\/edit-slot\/.*$/);
   config.settings.prefixPath = process.env.RAZZLE_PREFIX_PATH || '';
   config.settings.useQuantaToolbar = true;
-  config.toolbar = defaultToolbar;
   config.slots = defaultSlots;
+  config.registerComponent({
+    name: 'toolbar',
+    component: defaultToolbar,
+  });
+
   return config;
 };
 

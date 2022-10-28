@@ -1,4 +1,4 @@
-import { GET_SLOTS } from '@plone/volto/constants/ActionTypes';
+import { GET_SLOTS } from '@eeacms/volto-slots/constants';
 //, UPDATE_SLOTS
 
 /**

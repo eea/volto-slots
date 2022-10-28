@@ -22,7 +22,7 @@ import {
   SharingAction,
   ManageTranslations,
   UserButton,
-} from '@plone/volto/components/manage/Toolbar/ToolbarComponents';
+} from '@eeacms/volto-slots/components/manage/Toolbar/ToolbarComponents';
 
 const messages = defineMessages({
   personalInformation: {

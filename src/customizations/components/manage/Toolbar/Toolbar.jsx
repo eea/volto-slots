@@ -21,7 +21,7 @@ import {
   unlockContent,
 } from '@plone/volto/actions';
 import { BodyClass, getBaseUrl } from '@plone/volto/helpers';
-import { Bottom } from '@plone/volto/components/manage/Toolbar/ToolbarComponents';
+import { Bottom } from './ToolbarComponents';
 import { Pluggable } from '@plone/volto/components/manage/Pluggable';
 import config from '@plone/volto/registry';
 

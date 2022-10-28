@@ -6,7 +6,7 @@ import useDeepCompareEffect from 'use-deep-compare-effect';
 import { getBaseUrl } from '@plone/volto/helpers';
 import { getContextNavigation } from '@plone/volto/actions';
 
-import { contextNavPath } from '@plone/volto/helpers/ContextNavigation';
+import { contextNavPath } from '@eeacms/volto-slots/components/helpers/ContextNavigation';
 
 export function withContentNavigation(WrappedComponent) {
   /**

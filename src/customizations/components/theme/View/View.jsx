@@ -14,12 +14,13 @@ import qs from 'query-string';
 
 import {
   ContentMetadataTags,
-  ContentContainer,
   Comments,
   Tags,
   Toolbar,
 } from '@plone/volto/components';
-import { listActions, getContent, getSlots } from '@plone/volto/actions';
+import { ContentContainer } from '@eeacms/volto-slots/components';
+import { getSlots } from '@eeacms/volto-slots/actions';
+import { listActions, getContent } from '@plone/volto/actions';
 import {
   BodyClass,
   getBaseUrl,

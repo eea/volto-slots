@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { injectIntl } from 'react-intl';
 import cx from 'classnames';
-import QuantaEditBlockWrapper from '@plone/volto/components/manage/Blocks/Block/QuantaEditBlockWrapper';
+import QuantaEditBlockWrapper from '@eeacms/volto-slots/components/manage/Blocks/Block/QuantaEditBlockWrapper';
 import { Plug } from '@plone/volto/components/manage/Pluggable';
-import { BlockToolbarItem } from '@plone/volto/components';
+import { BlockToolbarItem } from '@eeacms/volto-slots/components';
 import { v4 as uuid } from 'uuid';
 
 // import lockSVG from '@plone/volto/icons/lock.svg';

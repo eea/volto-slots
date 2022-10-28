@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import config from '@plone/volto/registry';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import manageSlotsSVG from '@plone/volto/icons/server.svg';
-import { DropdownWithButton } from '@plone/volto/components/manage/Toolbar/Dropdown';
+import { DropdownWithButton } from '@eeacms/volto-slots/components/manage/Toolbar/Dropdown';
 import { Link } from 'react-router-dom';
 import { flattenToAppURL } from '@plone/volto/helpers';
 

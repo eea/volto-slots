@@ -4,11 +4,7 @@
  */
 
 import { flattenToAppURL } from '@plone/volto/helpers';
-import {
-  GET_SLOTS,
-  GET_SLOT,
-  SAVE_SLOT,
-} from '@plone/volto/constants/ActionTypes';
+import { GET_SLOTS, GET_SLOT, SAVE_SLOT } from '@eeacms/volto-slots/constants';
 
 /**
  * Get slots.

@@ -1,3 +1,1 @@
-import slots from './slots';
-
-export { slots };
+export slots from './slots';

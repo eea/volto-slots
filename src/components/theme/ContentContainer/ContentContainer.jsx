@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Grid } from 'semantic-ui-react';
-import { SlotRenderer } from '@plone/volto/components';
+import { SlotRenderer } from '@eeacms/volto-slots/components';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import config from '@plone/volto/registry';
-import { isSlotAvailable } from '@plone/volto/helpers';
+import { isSlotAvailable } from '@eeacms/volto-slots/components/helpers/Slots';
 
 const ContentContainer = ({ children, content }) => {
   const pathname = useLocation().pathname;

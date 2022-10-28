@@ -8,17 +8,18 @@ import { Button, Segment } from 'semantic-ui-react';
 import { isEqual } from 'lodash';
 import { v4 as uuid } from 'uuid';
 
-import { getSlots, saveSlot } from '@plone/volto/actions';
+import { getSlots, saveSlot } from '@eeacms/volto-slots/actions';
 import BlocksForm from '@plone/volto/components/manage/Blocks/Block/BlocksForm';
 import {
   getBlocks,
   emptyBlocksForm,
   Helmet,
   getBaseUrl,
-  slotsBlocksConfig,
   blockHasValue,
-  cleanupLastPlaceholders,
 } from '@plone/volto/helpers';
+import { cleanupLastPlaceholders } from '@plone/volto/helpers/Blocks/Blocks';
+
+import { slotsBlocksConfig } from '@eeacms/volto-slots/components/helpers/Slots';
 import { InlineForm, Icon, Sidebar, Toolbar } from '@plone/volto/components';
 import SlotEditBlockWrapper from './SlotEditBlockWrapper';
 import SlotSchema from './schema';
