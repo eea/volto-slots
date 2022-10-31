@@ -16,12 +16,13 @@
     "type": "git",
     "url": "git@github.com:eea/volto-slots.git"
   },
-  "dependencies": {
-    "@plone/scripts": "*"
-  },
   "devDependencies": {
+    "@plone/scripts": "2.0.0",
     "@cypress/code-coverage": "^3.9.5",
     "babel-plugin-transform-class-properties": "^6.24.1"
+  },
+  "resolutions": {
+    "**/@plone/scripts": "^2.0.0"
   },
   "scripts": {
     "release": "release-it",
