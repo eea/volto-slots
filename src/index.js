@@ -62,6 +62,7 @@ const applyConfig = (config) => {
     name: 'toolbar',
     component: defaultToolbar,
   });
+  config.settings.toolbar = defaultToolbar;
 
   return config;
 };
