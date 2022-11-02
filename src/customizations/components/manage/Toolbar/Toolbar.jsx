@@ -12,7 +12,7 @@ import { compose } from 'redux';
 import jwtDecode from 'jwt-decode';
 import { doesNodeContainClick } from 'semantic-ui-react/dist/commonjs/lib';
 import { withCookies } from 'react-cookie';
-import { filter, find } from 'lodash';
+import { filter } from 'lodash';
 import cx from 'classnames';
 import {
   getTypes,
@@ -24,14 +24,6 @@ import { BodyClass, getBaseUrl } from '@plone/volto/helpers';
 import { Bottom } from './ToolbarComponents';
 import { Pluggable } from '@plone/volto/components/manage/Pluggable';
 import config from '@plone/volto/registry';
-
-import penSVG from '@plone/volto/icons/pen.svg';
-import unlockSVG from '@plone/volto/icons/unlock.svg';
-import folderSVG from '@plone/volto/icons/folder.svg';
-import addSVG from '@plone/volto/icons/add-document.svg';
-import moreSVG from '@plone/volto/icons/more.svg';
-import userSVG from '@plone/volto/icons/user.svg';
-import clearSVG from '@plone/volto/icons/clear.svg';
 
 const messages = defineMessages({
   shrinkToolbar: {

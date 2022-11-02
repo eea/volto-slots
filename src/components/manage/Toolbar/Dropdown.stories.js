@@ -4,9 +4,9 @@ import Wrapper from '@plone/volto/storybook';
 import Icon from '@plone/volto/components/theme/Icon/Icon';
 import addSVG from '@plone/volto/icons/add-document.svg';
 import { BasicToolbar } from '@plone/volto/components/manage/Toolbar/Toolbar';
-import { Bottom } from '@plone/volto/components/manage/Toolbar/ToolbarComponents';
+import { Bottom } from './ToolbarComponents';
 import { Container } from 'semantic-ui-react';
-import { toolbar } from '~/config';
+import config from '@plone/volto/registry';
 // import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
 // import { defineMessages, injectIntl } from 'react-intl';
 // import { bottom } from '@plone/volto/config/toolbar';
@@ -37,6 +37,7 @@ You can register a custom dropdown with the DropdownWithButton component.
 };
 
 export const DropdownWithMenu = () => {
+  const { toolbar } = config.settings;
   const { defaultViewActions, defaultBottomActions } = toolbar;
   const activity = {
     top: [

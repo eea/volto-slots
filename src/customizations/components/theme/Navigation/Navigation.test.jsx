@@ -5,7 +5,7 @@ import { Provider } from 'react-intl-redux';
 import { MemoryRouter } from 'react-router-dom';
 import config from '@plone/volto/registry';
 
-import Navigation from './Navigation';
+import { Navigation } from '@plone/volto/components';
 
 const mockStore = configureStore();
 
