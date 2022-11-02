@@ -189,7 +189,7 @@ export class BasicToolbarComponent extends Component {
   toggleMenu = (e, selector, options = {}) => {
     const {
       extras = [],
-      menuStyle = { top: 0, overflow: 'initial' },
+      // menuStyle = { top: 0, overflow: 'initial' },
       loadedComponentName = 'default',
     } = options;
     if (this.state.showMenu) {
@@ -439,7 +439,7 @@ export const BasicToolbar = compose(
 )(BasicToolbarComponent);
 
 const Toolbar = (props) => {
-  const Toolbar = config.getComponent('toolbar').component;
+  //const Toolbar = config.getComponent('toolbar').component;
   const { toolbar } = config.settings;
   const activity = toolbar?.activities[props.activity || 'default'] || [];
   return <BasicToolbar {...props} {...activity}></BasicToolbar>;
