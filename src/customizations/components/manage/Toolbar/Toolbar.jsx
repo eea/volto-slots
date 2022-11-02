@@ -166,7 +166,7 @@ export class BasicToolbarComponent extends Component {
     this.setState(() => ({ showMenu: false, loadedComponents: [] }));
 
   loadComponent = (type) => {
-    const { toolbar } = config;
+    const { toolbar } = config.settings;
     const { loadedComponents } = this.state;
     if (type) {
       if (!this.state.loadedComponents.includes(type)) {
@@ -184,7 +184,7 @@ export class BasicToolbarComponent extends Component {
   };
 
   unloadComponent = () => {
-    const { toolbar } = config;
+    const { toolbar } = config.settings;
     this.setState((state) => ({
       loadedComponents: state.loadedComponents.slice(0, -1),
       hideToolbarBody:
@@ -243,7 +243,7 @@ export class BasicToolbarComponent extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    const { toolbar } = config;
+    const { toolbar } = config.settings;
     const { top = [], bottom = [] } = this.props;
     const { expanded } = this.state;
 
