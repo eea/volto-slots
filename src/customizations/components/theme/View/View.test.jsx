@@ -29,13 +29,18 @@ const mockStore = configureStore();
 jest.mock('react-portal', () => ({
   Portal: jest.fn(() => <div id="Portal" />),
 }));
-jest.mock('../SocialSharing/SocialSharing', () =>
+jest.mock('@plone/volto/components/theme/SocialSharing/SocialSharing', () =>
   jest.fn(() => <div id="SocialSharing" />),
 );
-jest.mock('../Comments/Comments', () => jest.fn(() => <div id="Comments" />));
-jest.mock('../Tags/Tags', () => jest.fn(() => <div id="Tags" />));
-jest.mock('../ContentMetadataTags/ContentMetadataTags', () =>
-  jest.fn(() => <div id="ContentMetadataTags" />),
+jest.mock('@plone/volto/components/theme/Comments/Comments', () =>
+  jest.fn(() => <div id="Comments" />),
+);
+jest.mock('@plone/volto/components/theme/Tags/Tags', () =>
+  jest.fn(() => <div id="Tags" />),
+);
+jest.mock(
+  '@plone/volto/components/theme/ContentMetadataTags/ContentMetadataTags',
+  () => jest.fn(() => <div id="ContentMetadataTags" />),
 );
 
 const actions = {
