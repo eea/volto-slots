@@ -39,8 +39,9 @@ import {
   getNavigation,
   getTypes,
   getWorkflow,
-  getSlots,
 } from '@plone/volto/actions';
+
+import { getSlots } from '@eeacms/volto-slots/actions';
 
 import clearSVG from '@plone/volto/icons/clear.svg';
 import MultilingualRedirector from '@plone/volto/components/theme/MultilingualRedirector/MultilingualRedirector';
