@@ -5,6 +5,7 @@ import { Provider } from 'react-intl-redux';
 import { MemoryRouter } from 'react-router-dom';
 
 import View from './View';
+import defaultSlots from '@eeacms/volto-slots/slots';
 import config from '@plone/volto/registry';
 
 beforeAll(() => {
@@ -22,6 +23,7 @@ beforeAll(() => {
     },
   });
   config.settings.publicURL = 'https://plone.org';
+  config.slots = defaultSlots;
 });
 
 const mockStore = configureStore();
