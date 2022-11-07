@@ -60,53 +60,53 @@ pipeline {
       }
     }
 
-    stage('Tests') {
-      when {
-        allOf {
-          environment name: 'CHANGE_ID', value: ''
-          anyOf {
-           not { changelog '.*^Automated release [0-9\\.]+$' }
-           branch 'master'
-          }
-        }
-      }
-      steps {
-        parallel(
+    // stage('Tests') {
+    //   when {
+    //     allOf {
+    //       environment name: 'CHANGE_ID', value: ''
+    //       anyOf {
+    //        not { changelog '.*^Automated release [0-9\\.]+$' }
+    //        branch 'master'
+    //       }
+    //     }
+    //   }
+    //   steps {
+    //     parallel(
 
-          "Volto": {
-            node(label: 'docker') {
-              script {
-                try {
-                  sh '''docker pull plone/volto-addon-ci:alpha'''
-                  sh '''docker run -i --name="$BUILD_TAG-volto" -e NAMESPACE="$NAMESPACE" -e GIT_NAME=$GIT_NAME -e GIT_BRANCH="$BRANCH_NAME" -e GIT_CHANGE_ID="$CHANGE_ID" -e VOLTO=$VOLTO plone/volto-addon-ci:alpha yarn test -u'''
-                  sh '''rm -rf xunit-reports'''
-                  sh '''mkdir -p xunit-reports'''
-                  sh '''docker cp $BUILD_TAG-volto:/opt/frontend/my-volto-project/coverage xunit-reports/'''
-                  sh '''docker cp $BUILD_TAG-volto:/opt/frontend/my-volto-project/junit.xml xunit-reports/'''
-                  sh '''docker cp $BUILD_TAG-volto:/opt/frontend/my-volto-project/unit_tests_log.txt xunit-reports/'''
-                  stash name: "xunit-reports", includes: "xunit-reports/**"
-                  archiveArtifacts artifacts: "xunit-reports/unit_tests_log.txt", fingerprint: true
-                  publishHTML (target : [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true,
-                    reportDir: 'xunit-reports/coverage/lcov-report',
-                    reportFiles: 'index.html',
-                    reportName: 'UTCoverage',
-                    reportTitles: 'Unit Tests Code Coverage'
-                  ])
-                } finally {
-                    catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
-                        junit testResults: 'xunit-reports/junit.xml', allowEmptyResults: true
-                    }
-                   sh script: '''docker rm -v $BUILD_TAG-volto''', returnStatus: true
-                }
-              }
-            }
-          }
-        )
-      }
-    }
+    //       "Volto": {
+    //         node(label: 'docker') {
+    //           script {
+    //             try {
+    //               sh '''docker pull plone/volto-addon-ci:alpha'''
+    //               sh '''docker run -i --name="$BUILD_TAG-volto" -e NAMESPACE="$NAMESPACE" -e GIT_NAME=$GIT_NAME -e GIT_BRANCH="$BRANCH_NAME" -e GIT_CHANGE_ID="$CHANGE_ID" -e VOLTO=$VOLTO plone/volto-addon-ci:alpha '''
+    //               sh '''rm -rf xunit-reports'''
+    //               sh '''mkdir -p xunit-reports'''
+    //               sh '''docker cp $BUILD_TAG-volto:/opt/frontend/my-volto-project/coverage xunit-reports/'''
+    //               sh '''docker cp $BUILD_TAG-volto:/opt/frontend/my-volto-project/junit.xml xunit-reports/'''
+    //               sh '''docker cp $BUILD_TAG-volto:/opt/frontend/my-volto-project/unit_tests_log.txt xunit-reports/'''
+    //               stash name: "xunit-reports", includes: "xunit-reports/**"
+    //               archiveArtifacts artifacts: "xunit-reports/unit_tests_log.txt", fingerprint: true
+    //               publishHTML (target : [
+    //                 allowMissing: false,
+    //                 alwaysLinkToLastBuild: true,
+    //                 keepAll: true,
+    //                 reportDir: 'xunit-reports/coverage/lcov-report',
+    //                 reportFiles: 'index.html',
+    //                 reportName: 'UTCoverage',
+    //                 reportTitles: 'Unit Tests Code Coverage'
+    //               ])
+    //             } finally {
+    //                 catchError(buildResult: 'SUCCESS', stageResult: 'SUCCESS') {
+    //                     junit testResults: 'xunit-reports/junit.xml', allowEmptyResults: true
+    //                 }
+    //                sh script: '''docker rm -v $BUILD_TAG-volto''', returnStatus: true
+    //             }
+    //           }
+    //         }
+    //       }
+    //     )
+    //   }
+    // }
 
     stage('Integration tests') {
       when {
