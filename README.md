@@ -16,7 +16,7 @@
 
 [Volto](https://github.com/plone/volto) add-on
 
-# Slots anatomy
+## Slots anatomy
 
 The slots are insertion points in the Volto rendering tree structure. You can add a
 component, along with its configuration, if any and it will be rendered in that
@@ -36,7 +36,7 @@ export const slots = {
 Slots are inherited by default on all children routes, but you can block inheritance by
 defining `exact` property to `true`.
 
-## Slots
+### Slots
 
 - aboveContentTitle
 - belowContentTitle
