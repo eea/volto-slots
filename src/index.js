@@ -55,7 +55,7 @@ const applyConfig = (config) => {
   };
 
   config.settings.nonContentRoutes.push('/edit-slot', /\/edit-slot\/.*$/);
-  config.settings.prefixPath = process.env.RAZZLE_PREFIX_PATH || '';
+  // config.settings.prefixPath = process.env.RAZZLE_PREFIX_PATH || '';
   config.settings.useQuantaToolbar = true;
   config.slots = defaultSlots;
   config.registerComponent({

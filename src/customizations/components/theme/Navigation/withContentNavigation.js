@@ -30,6 +30,7 @@ export function withContentNavigation(WrappedComponent) {
       params = {},
     } = props;
 
+    // This is in place of https://github.com/plone/volto/blob/master/src/components/theme/Navigation/withContentNavigation.js#L31
     const path = contextNavPath(pathname, params);
 
     const dispatch = useDispatch();
