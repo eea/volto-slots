@@ -11,4 +11,4 @@ The customization exists because of the asyncConnect call for 'slots' which gene
 
 ```
 
-The original file: https://github.com/plone/volto/blob/master/src/components/theme/App/App.jsx
+The original file: https://github.com/plone/volto/blob/f046c60be79b9112d955569deb8287ae2a774d8e/src/components/theme/App/App.jsx#L1
