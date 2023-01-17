@@ -91,6 +91,10 @@ const messages = defineMessages({
     id: 'Manage Translations',
     defaultMessage: 'Manage Translations',
   },
+  unlock: {
+    id: 'Unlock',
+    defaultMessage: 'Unlock',
+  },
 });
 
 /**
