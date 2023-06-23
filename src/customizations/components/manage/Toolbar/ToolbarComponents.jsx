@@ -13,8 +13,6 @@ import addSVG from '@plone/volto/icons/add-document.svg';
 import clearSVG from '@plone/volto/icons/clear.svg';
 import folderSVG from '@plone/volto/icons/folder.svg';
 import moreSVG from '@plone/volto/icons/more.svg';
-import pastanagaSmall from '@plone/volto/components/manage/Toolbar/pastanaga-small.svg';
-import pastanagalogo from '@plone/volto/components/manage/Toolbar/pastanaga.svg';
 import penSVG from '@plone/volto/icons/pen.svg';
 import rightArrowSVG from '@plone/volto/icons/right-key.svg';
 import userSVG from '@plone/volto/icons/user.svg';
@@ -320,14 +318,5 @@ export const UserButton = (props) => (
 );
 
 export const Bottom = (props) => {
-  return (
-    <>
-      <img className="minipastanaga" src={pastanagaSmall} alt="" />
-      {!props.hideDefaultViewButtons && props.children}
-      <div className="divider" />
-      <div className="pastanagalogo">
-        <img src={pastanagalogo} alt="" />
-      </div>
-    </>
-  );
+  return <>{!props.hideDefaultViewButtons && props.children}</>;
 };
