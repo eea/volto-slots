@@ -393,14 +393,16 @@ export function cleanupLastPlaceholders(formData) {
   if (!blocks_layout?.items?.length) return formData;
 
   const remove = [];
-  [...(blocks_layout.items || [])].reverse().find((uid) => {
-    if (isPlaceholderBlock(blocks[uid])) {
-      remove.push(uid);
-      return false;
-    } else {
-      return true;
-    }
-  });
+  const blocksLayoutItems = [...(blocks_layout.items || [])]
+    .reverse()
+    .find((uid) => {
+      if (isPlaceholderBlock(blocks[uid])) {
+        remove.push(uid);
+        return false;
+      } else {
+        return true;
+      }
+    });
 
   return {
     ...formData,

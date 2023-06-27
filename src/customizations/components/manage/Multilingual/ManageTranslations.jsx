@@ -254,7 +254,7 @@ const ManageTranslations = (props) => {
                               mode: 'link',
                               overlay: true,
                               onSelectItem: (url) => {
-                                onSelectTarget(url, isObjectBrowserOpen);
+                                onSelectTarget(url);
                               },
                             })
                           }
