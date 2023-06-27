@@ -233,8 +233,6 @@ export class EditComponent extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    // console.log('draft config', this.draftConfig);
-
     if (__SERVER__) {
       return <div />;
     }

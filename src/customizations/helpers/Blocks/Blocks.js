@@ -411,6 +411,7 @@ export function cleanupLastPlaceholders(formData) {
       items: blocks_layout.items.filter((uid) => remove.indexOf(uid) === -1),
     },
     blocks: omit(blocks, remove),
+    blocksLayoutItems,
   };
 }
 

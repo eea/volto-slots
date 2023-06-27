@@ -33,7 +33,7 @@ import {
 } from 'lodash';
 import move from 'lodash-move';
 import { FormattedMessage, defineMessages, injectIntl } from 'react-intl';
-import { asyncConnect } from '@plone/volto/helpers';
+import { asyncConnect, Helmet, getBaseUrl } from '@plone/volto/helpers';
 
 import {
   searchContent,
@@ -64,7 +64,6 @@ import {
   Unauthorized,
 } from '@plone/volto/components';
 
-import { Helmet, getBaseUrl } from '@plone/volto/helpers';
 import { injectLazyLibs } from '@plone/volto/helpers/Loadable/Loadable';
 
 import cutSVG from '@plone/volto/icons/cut.svg';
@@ -1096,7 +1095,6 @@ class Contents extends Component {
   render() {
     const selected = this.state.selected.length > 0;
     const filteredItems = this.state.filteredItems || this.state.selected;
-    // const path = getBaseUrl(this.props.pathname);
     const folderContentsAction = find(this.props.objectActions, {
       id: 'folderContents',
     });

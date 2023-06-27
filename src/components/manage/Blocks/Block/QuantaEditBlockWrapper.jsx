@@ -25,7 +25,6 @@ const messages = defineMessages({
 });
 
 const QuantaToolbar = (props) => {
-  // const pluggableContext = React.useContext(PluggableContext);
   return <div className="toolbar quanta-block-toolbar">{props.children}</div>;
 };
 
@@ -121,8 +120,3 @@ const QuantaEditBlockWrapper = (props) => {
 };
 
 export default QuantaEditBlockWrapper;
-/*
-{children.map((child, i) => (
-  <Dropdown.Item key={i}>{child}</Dropdown.Item>
-))}
-*/

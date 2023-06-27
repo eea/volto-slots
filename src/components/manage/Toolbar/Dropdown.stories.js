@@ -7,9 +7,6 @@ import { BasicToolbar } from '@plone/volto/components/manage/Toolbar/Toolbar';
 import { Bottom } from './ToolbarComponents';
 import { Container } from 'semantic-ui-react';
 import config from '@plone/volto/registry';
-// import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
-// import { defineMessages, injectIntl } from 'react-intl';
-// import { bottom } from '@plone/volto/config/toolbar';
 
 export default {
   title: 'Dropdown',

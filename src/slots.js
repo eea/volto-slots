@@ -1,6 +1,3 @@
-// import ContextNavigation from '@plone/volto/components/theme/Navigation/ContextNavigation';
-// import { restrictToPath } from '@plone/volto/helpers';
-
 const defaultSlots = {
   asideRightSlot: {
     title: 'Right column',
