@@ -14,9 +14,9 @@ export function restrictToPath(match) {
 export function isSlotAvailable({ slotName, pathname, slotData, slots }) {
   return (
     [
-      ...(Object.values(
-        slotData?.items?.[slotName]?.blocks || {},
-      ).filter((item) => blockHasValue({ pathname, ...item })) || []),
+      ...(Object.values(slotData?.items?.[slotName]?.blocks || {})
+        .filter((item) => !item.readOnly)
+        .filter((item) => blockHasValue({ pathname, ...item })) || []),
       ...slots[slotName]?.items?.filter((reg) =>
         reg.available({ pathname, slotName, slotData, slots }),
       ),
