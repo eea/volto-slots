@@ -1,7 +1,6 @@
 import React from 'react';
 import WrapperlessBlockEdit from './Edit';
 import { DragDropList } from '@plone/volto/components';
-import { getBlocks } from '@plone/volto/helpers';
 import {
   addBlock,
   insertBlock,
@@ -11,11 +10,12 @@ import {
   mutateBlock,
   nextBlockId,
   previousBlockId,
+  getBlocks,
+  useDetectClickOutside,
 } from '@plone/volto/helpers';
 import EditBlockWrapper from '@plone/volto/components/manage/Blocks/Block/EditBlockWrapper';
 import { setSidebarTab } from '@plone/volto/actions';
 import { useDispatch } from 'react-redux';
-import { useDetectClickOutside } from '@plone/volto/helpers';
 import QuantaEditBlockWrapper from '@eeacms/volto-slots/components/manage/Blocks/Block/QuantaEditBlockWrapper';
 import config from '@plone/volto/registry';
 

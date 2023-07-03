@@ -5,7 +5,6 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from '@plone/volto/helpers';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { filter, isEqual, map } from 'lodash';
@@ -21,6 +20,7 @@ import {
   getBlocksFieldname,
   getBlocksLayoutFieldname,
   hasBlocksData,
+  Helmet,
 } from '@plone/volto/helpers';
 import {
   DiffField,

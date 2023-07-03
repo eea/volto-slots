@@ -20,7 +20,7 @@ const NavItem = ({ item, lang }) => {
           settings.isMultilingual ? item.url === `/${lang}` : item.url === ''
         }
         isActive={(match, location) => {
-          const active = match
+          return match
             ? match.isExact
               ? true
               : settings.prefixPath
@@ -32,18 +32,6 @@ const NavItem = ({ item, lang }) => {
                   strict: false,
                 })
             : false;
-
-          // console.log('m', {
-          //   active,
-          //   item,
-          //   match,
-          //   location,
-          //   isMultilingual: settings.isMultilingual,
-          //   isItemUrl: item.url === `${settings.prefixPath}/${lang}`,
-          //   prefixPath: settings.prefixPath,
-          //   isEmpty: item.url === '',
-          // });
-          return active;
         }}
       >
         {item.title}

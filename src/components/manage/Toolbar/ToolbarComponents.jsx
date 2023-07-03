@@ -20,8 +20,6 @@ import rightArrowSVG from '@plone/volto/icons/right-key.svg';
 import userSVG from '@plone/volto/icons/user.svg';
 import unlockSVG from '@plone/volto/icons/unlock.svg';
 
-// import { matchPath } from 'react-router';
-
 const messages = defineMessages({
   edit: {
     id: 'Edit',

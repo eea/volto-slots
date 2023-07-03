@@ -439,7 +439,6 @@ export const BasicToolbar = compose(
 )(BasicToolbarComponent);
 
 const Toolbar = (props) => {
-  //const Toolbar = config.getComponent('toolbar').component;
   const { toolbar } = config.settings;
   const activity = toolbar?.activities[props.activity || 'default'] || [];
   return <BasicToolbar {...props} {...activity}></BasicToolbar>;
