@@ -28,24 +28,7 @@ Array [
       </div>
       <div
         className="toolbar-bottom"
-      >
-        <img
-          alt=""
-          className="minipastanaga"
-          src="pastanaga-small.svg"
-        />
-        <div
-          className="divider"
-        />
-        <div
-          className="pastanagalogo"
-        >
-          <img
-            alt=""
-            src="pastanaga.svg"
-          />
-        </div>
-      </div>
+      />
     </div>
     <div
       className="toolbar-handler"
@@ -91,24 +74,7 @@ Array [
       </div>
       <div
         className="toolbar-bottom"
-      >
-        <img
-          alt=""
-          className="minipastanaga"
-          src="pastanaga-small.svg"
-        />
-        <div
-          className="divider"
-        />
-        <div
-          className="pastanagalogo"
-        >
-          <img
-            alt=""
-            src="pastanaga.svg"
-          />
-        </div>
-      </div>
+      />
     </div>
     <div
       className="toolbar-handler"

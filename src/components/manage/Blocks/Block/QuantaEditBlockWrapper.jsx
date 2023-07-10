@@ -5,7 +5,6 @@ import includes from 'lodash/includes';
 import isBoolean from 'lodash/isBoolean';
 import { defineMessages, useIntl } from 'react-intl';
 import { BlockChooserButton, Icon } from '@plone/volto/components';
-import { blockHasValue } from '@plone/volto/helpers';
 import {
   Pluggable,
   Plug,
@@ -25,12 +24,7 @@ const messages = defineMessages({
   },
 });
 
-const hideHandler = (data) => {
-  return !!data.fixed || !blockHasValue(data);
-};
-
 const QuantaToolbar = (props) => {
-  // const pluggableContext = React.useContext(PluggableContext);
   return <div className="toolbar quanta-block-toolbar">{props.children}</div>;
 };
 
@@ -41,8 +35,6 @@ const QuantaEditBlockWrapper = (props) => {
   const required = isBoolean(data.required)
     ? data.required
     : includes(config.blocks.requiredBlocks, type);
-
-  const visibleHandler = selected && !hideHandler(data);
 
   return (
     <div
@@ -59,7 +51,7 @@ const QuantaEditBlockWrapper = (props) => {
           <Button
             style={{
               // avoid react-dnd to complain
-              visibility: visibleHandler ? 'visible' : 'visible',
+              visibility: 'visible',
             }}
             {...draginfo.dragHandleProps}
             icon
@@ -128,8 +120,3 @@ const QuantaEditBlockWrapper = (props) => {
 };
 
 export default QuantaEditBlockWrapper;
-/*
-{children.map((child, i) => (
-  <Dropdown.Item key={i}>{child}</Dropdown.Item>
-))}
-*/

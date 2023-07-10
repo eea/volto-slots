@@ -5,7 +5,6 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { BodyClass, Helmet } from '@plone/volto/helpers';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { keys, isEmpty } from 'lodash';
@@ -34,6 +33,8 @@ import {
   getLanguageIndependentFields,
   langmap,
   normalizeLanguageName,
+  BodyClass,
+  Helmet,
 } from '@plone/volto/helpers';
 
 import { preloadLazyLibs } from '@plone/volto/helpers/Loadable';

@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Link } from 'react-router-dom';
-import { asyncConnect } from '@plone/volto/helpers';
+import { asyncConnect, Helmet } from '@plone/volto/helpers';
 import { FormattedMessage } from 'react-intl';
 import { Portal } from 'react-portal';
 import { Container, Pagination, Button, Header } from 'semantic-ui-react';
@@ -16,7 +16,6 @@ import qs from 'query-string';
 import classNames from 'classnames';
 
 import config from '@plone/volto/registry';
-import { Helmet } from '@plone/volto/helpers';
 import { searchContent } from '@plone/volto/actions';
 import { SearchTags, Toolbar, Icon } from '@plone/volto/components';
 

@@ -5,7 +5,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from '@plone/volto/helpers';
+import { Helmet, getBaseUrl } from '@plone/volto/helpers';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
@@ -20,7 +20,6 @@ import {
   Toolbar,
 } from '@plone/volto/components';
 import { getHistory, revertHistory } from '@plone/volto/actions';
-import { getBaseUrl } from '@plone/volto/helpers';
 
 import backSVG from '@plone/volto/icons/back.svg';
 

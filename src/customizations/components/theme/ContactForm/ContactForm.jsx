@@ -5,7 +5,7 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from '@plone/volto/helpers';
+import { Helmet, getBaseUrl } from '@plone/volto/helpers';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { Portal } from 'react-portal';
@@ -16,7 +16,6 @@ import { toast } from 'react-toastify';
 
 import { Form, Toolbar, Toast } from '@plone/volto/components';
 import { emailNotification } from '@plone/volto/actions';
-import { getBaseUrl } from '@plone/volto/helpers';
 
 const messages = defineMessages({
   send: {

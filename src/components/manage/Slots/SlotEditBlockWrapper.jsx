@@ -7,7 +7,6 @@ import { Plug } from '@plone/volto/components/manage/Pluggable';
 import { BlockToolbarItem } from '@eeacms/volto-slots/components';
 import { v4 as uuid } from 'uuid';
 
-// import lockSVG from '@plone/volto/icons/lock.svg';
 import hideSVG from '@plone/volto/icons/hide.svg';
 import showSVG from '@plone/volto/icons/show.svg';
 import lockOffSVG from '@plone/volto/icons/lock-off.svg';

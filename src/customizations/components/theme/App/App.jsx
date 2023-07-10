@@ -8,7 +8,6 @@ import jwtDecode from 'jwt-decode';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { asyncConnect, Helmet } from '@plone/volto/helpers';
 import { Segment } from 'semantic-ui-react';
 import { renderRoutes } from 'react-router-config';
 import { Slide, ToastContainer, toast } from 'react-toastify';
@@ -32,7 +31,14 @@ import {
   AppExtras,
   SkipLinks,
 } from '@plone/volto/components';
-import { BodyClass, getBaseUrl, getView, isCmsUi } from '@plone/volto/helpers';
+import {
+  BodyClass,
+  getBaseUrl,
+  getView,
+  isCmsUi,
+  asyncConnect,
+  Helmet,
+} from '@plone/volto/helpers';
 import {
   getBreadcrumbs,
   getContent,
