@@ -43,7 +43,7 @@ const NavItem = ({ item, lang }) => {
         href={item.url}
         key={item.url}
         className="item"
-        rel="noopener noreferrer"
+        rel="noopener"
       >
         {item.title}
       </a>
