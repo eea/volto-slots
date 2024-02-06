@@ -61,7 +61,6 @@ pipeline {
           allOf {
             not { environment name: 'CHANGE_ID', value: '' }
             environment name: 'CHANGE_TARGET', value: 'develop'
-            environment name: 'SKIP_TESTS', value: ''
           }
           allOf {
             environment name: 'CHANGE_ID', value: ''
@@ -69,7 +68,6 @@ pipeline {
               not { changelog '.*^Automated release [0-9\\.]+$' }
               branch 'master'
             }
-            environment name: 'SKIP_TESTS', value: ''
           }
         }
       }
@@ -109,24 +107,28 @@ pipeline {
         }
 
         stage('ES lint') {
+          when { environment name: 'SKIP_TESTS', value: '' }
           steps {
             sh '''docker run --rm --name="$IMAGE_NAME-eslint" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME $IMAGE_NAME-frontend lint'''
           }
         }
 
         stage('Style lint') {
+          when { environment name: 'SKIP_TESTS', value: '' }
           steps {
             sh '''docker run --rm --name="$IMAGE_NAME-stylelint" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME  $IMAGE_NAME-frontend stylelint'''
           }
         }
 
         stage('Prettier') {
+          when { environment name: 'SKIP_TESTS', value: '' }
           steps {
             sh '''docker run --rm --name="$IMAGE_NAME-prettier" --entrypoint=make --workdir=/app/src/addons/$GIT_NAME  $IMAGE_NAME-frontend prettier'''
           }
         }
 
         stage('Coverage Tests') {
+          when { environment name: 'SKIP_TESTS', value: '' }
           parallel {
             
             stage('Unit tests') {
@@ -221,9 +223,11 @@ pipeline {
           allOf {
             not { environment name: 'CHANGE_ID', value: '' }
             environment name: 'CHANGE_TARGET', value: 'develop'
+            environment name: 'SKIP_TESTS', value: '' 
           }
           allOf {
             environment name: 'CHANGE_ID', value: ''
+            environment name: 'SKIP_TESTS', value: '' 
             anyOf {
               allOf {
                 branch 'develop'
@@ -254,8 +258,10 @@ pipeline {
           allOf {
             not { environment name: 'CHANGE_ID', value: '' }
             environment name: 'CHANGE_TARGET', value: 'develop'
+            environment name: 'SKIP_TESTS', value: '' 
           }
           allOf {
+            environment name: 'SKIP_TESTS', value: '' 
             environment name: 'CHANGE_ID', value: ''
             branch 'develop'
             not { changelog '.*^Automated release [0-9\\.]+$' }
