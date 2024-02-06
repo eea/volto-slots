@@ -137,12 +137,12 @@ help:                   ## Show this help.
 
 .PHONY: ci-fix
 ci-fix:
-	echo "Running lint-fix"
-	make lint-fix
 	echo "Running prettier-fix"
 	make prettier-fix
 	echo "Running stylelint-fix"
 	make stylelint-fix
+	echo "Running lint-fix"
+	make lint-fix
 
 .PHONY: test-ci
 test-ci:
