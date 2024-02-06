@@ -39,12 +39,7 @@ const NavItem = ({ item, lang }) => {
     );
   } else {
     return (
-      <a
-        href={item.url}
-        key={item.url}
-        className="item"
-        rel="noopener"
-      >
+      <a href={item.url} key={item.url} className="item" rel="noopener">
         {item.title}
       </a>
     );
