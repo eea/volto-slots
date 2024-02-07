@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { defineMessages, injectIntl } from 'react-intl';
 import { Portal } from 'react-portal';
-import { Button, Segment } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 import { isEqual } from 'lodash';
 import { v4 as uuid } from 'uuid';
 
@@ -239,16 +239,6 @@ class EditSlot extends React.Component {
                     })
                   }
                 />
-                {false && (
-                  <Segment>
-                    <fieldset>
-                      <legend>Block color legend</legend>
-                      <div className="block">
-                        <div className="block selected">Regular slot fill</div>
-                      </div>
-                    </fieldset>
-                  </Segment>
-                )}
               </div>
             </Portal>
           </div>
