@@ -2,7 +2,7 @@
 
 exports[`Navigation Multilingual renders a navigation component with an active item when its subchildren are accessed 1`] = `
 <nav
-  aria-label="navigation"
+  aria-label="Site"
   className="navigation"
   id="navigation"
 >
