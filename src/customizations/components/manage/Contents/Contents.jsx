@@ -1093,7 +1093,7 @@ class Contents extends Component {
    * @returns {string} Markup for the component.
    */
   render() {
-    const selected = this.state.selected.length > 0;
+    const selected = this.state.selected?.length > 0;
     const filteredItems = this.state.filteredItems || this.state.selected;
     const folderContentsAction = find(this.props.objectActions, {
       id: 'folderContents',
@@ -1107,7 +1107,7 @@ class Contents extends Component {
       (this.props.orderRequest?.loading && !this.props.orderRequest?.error) ||
       (this.props.searchRequest?.loading && !this.props.searchRequest?.error);
 
-    return this.props.token && this.props.objectActions.length > 0 ? (
+    return this.props.token && this.props.objectActions?.length > 0 ? (
       <>
         {folderContentsAction ? (
           <Container id="page-contents" className="folder-contents">
