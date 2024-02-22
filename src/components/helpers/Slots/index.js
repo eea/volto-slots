@@ -17,9 +17,9 @@ export function isSlotAvailable({ slotName, pathname, slotData, slots }) {
       ...(Object.values(slotData?.items?.[slotName]?.blocks || {})
         .filter((item) => !item.readOnly)
         .filter((item) => blockHasValue({ pathname, ...item })) || []),
-      ...slots[slotName]?.items?.filter((reg) =>
+      ...(slots[slotName]?.items?.filter((reg) =>
         reg.available({ pathname, slotName, slotData, slots }),
-      ),
+      ) || []),
     ].length > 0
   );
 }
